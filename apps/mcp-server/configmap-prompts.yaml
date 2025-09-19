@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mcp-prompts
+  namespace: mcp
+data:
+  secure-terraform.md: |
+    # Secure Terraform (Corp Standard)
+    - Prefer Azure Verified Modules (AVM); fall back to azurerm_* only if no AVM exists.
+    - Emit import blocks per resource with correct IDs.
+    - Never output secrets in plain text.
+    - Enforce tags: env, costcenter, owner.
+    - Validate with `terraform validate` before proposing changes.

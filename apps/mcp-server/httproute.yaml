@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: mcp-server
+  namespace: mcp
+spec:
+  parentRefs:
+    - name: ingressgateway           # <-- your Gateway name
+      namespace: istio-ingress       # <-- your Gateway namespace
+  hostnames:
+    - mcp.brettoj.com                # <-- change to your hostname
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: mcp-server
+          port: 80

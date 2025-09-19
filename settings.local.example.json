@@ -1,0 +1,15 @@
+{
+  "chat.agent.enabled": false,
+  "chat.mcp.access": {
+    "allow": [
+      {
+        "id": "corp-mcp",
+        "transport": "http",
+        "url": "https://mcp.brettoj.com"
+      }
+    ],
+    "deny": "all"
+  },
+  "chat.promptFiles.enabled": false,
+  "chat.extensions.enabled": false
+}
